@@ -1,20 +1,23 @@
 window.onload = function () {
 
-  document.querySelector('#menu').onmouseover = menuShou;
-  document.querySelector('#menu').onmouseout = menuHide;
+  document.querySelector('.tabs-header').addEventListener('click', fTabs)
 
-  document.onkeydown  = function(event) {
-    console.log(event)
-    if(event.code == 'KeyM') menuShou();
-      if(event.code == 'Escape') menuHide();
-  }
+    function fTabs(event) {
+      // console.log(event)
+      // console.log(event.target.getAttribute('data-tab'))
+      // console.log(event.target.className == 'tab-h')
+      if (event.target.className == 'tabs-h') {
+        let dataTab = event.target.getAttribute('data-tab')
+        let tabBody = document.getElementsByClassName('tab-b')
+        for (let i = 0; i < tabBody.length; i++) {
+          if (dataTab == i) {
+            tabBody[i].style.display = 'block'
+          } else {
+             tabBody[i].style.display = 'none'
+          }
+        }
+        // console.log(dataTab)
+      }
 
-function menuShou() {
-  document.querySelector('#menu').style.left = 0
-}
-
-function menuHide() {
-  document.querySelector('#menu').style.left = '-220px';
-}
-
+    }
 }

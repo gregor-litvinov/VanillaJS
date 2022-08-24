@@ -4,19 +4,37 @@
   box-sizing: border-box;
 }
 
-#menu {
-  width: 250px;
-  height: 100vh;
-  background: black;
-  position: fixed;
-  left: -220px;
-  top: 0;
-  transition: all ease 1s;
+.tabs {
+  width: 600px;
+  /* height: 350px; */
+  background-color: yellow;
+  margin: 50px auto;
+  font-family: sans-serif;
 }
 
-li {
- color: aliceblue;
- padding-left: 40%;
- padding-top: 20%;
- line-height: 24px
+.tabs-h {
+  display: inline-block;
+  height: 30px;
+  width: 50px;
+  text-align: center;
+  border: 1px solid black;
+  line-height: 30px;
+}
+.tab-b {
+  display: none;
+  padding: 20px;
+  border: 1px solid black ;
+}
+.tabs-body {
+  position: relative;
+  top: -1px;
+  z-index: 1;
+}
+.tabs-header {
+  position: relative;
+  z-index: 2;
+
+}
+.activ {
+  border-bottom: 1px solid yellow;
 }
