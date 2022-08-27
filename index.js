@@ -1,32 +1,33 @@
 window.onload = function () {
-let number = Math.floor(10*Math.random()) + 1;
-console.log(number)
-let count = 2;
 
-document.getElementById('check').onclick = function() {
+  let block = document.getElementById('one')
 
-if (count > 0) {
-  let userNam = document.getElementById('mynum').value;
-  console.log(userNam)
-  userNam = parseInt(userNam)
-
-  let out = document.getElementById('out')
-
-    if (userNam == number) {
-    out.innerHTML = 'winner!'
-    }
-    else if (userNam > number) {
-    out.innerHTML = 'cold!'
-    }
-    else if (userNam < number) {
-    out.innerHTML = 'hot!'
-    }
-    document.getElementById('count').innerHTML = 'Attention! you can try eat' + count;
-     count = count - 1;
+  // block.onclick = function() {
+  //   this.style.background = 'green'
+  //   this.onclick = null
+  // }
+  // block.ondblclick = function() {
+  //   this.style.background = 'red'
+  // }
+    block.oncontextmenu = function() {
+    this.style.background = 'black'
+    return false
   }
-else {
-      alert('you lost')
-      window.location.reload()
-}
-}
+  // block.onmouseenter = function() {
+  //   console.log('...in!')
+  //   this.style.background = 'gold'
+  // }
+  // block.onmouseleave = function() {
+  //   this.style.background = 'blue'
+  // }
+    //   let a = 0;
+    //   block.onmousemove = function() {
+    //   a++
+    //   this.style.width = 100 + a +'px'
+    // }
+    block.onmousedown = function(event) {
+      this.style.background = 'cyan'
+      console.log(event.button)
+
+    }
 }
