@@ -1,33 +1,21 @@
 window.onload = function () {
 
-  let sdvig = 0;
-  let timer;
+  let left = document.querySelector('.left')
+  let right =  document.querySelector('.right')
 
-  let test = document.getElementById('test')
-  // move()
+  function equalHeight() {
 
-  function move() {
-    test.style.marginLeft = sdvig + 'px'
-    sdvig = sdvig + 10;
-    timer = setTimeout(move, 50)
+      left.style.height = 'auto';
+      right.style.height = 'auto';
+      let leftH = left.offsetHeight
+      let rightH = right.offsetHeight
+        console.log(left)
+
+      let max = Math.max(leftH, rightH)
+       left.style.height = max + 'px';
+       right.style.height = max + 'px'
   }
+    equalHeight()
 
-  // let timer = setInterval(move, 50)
-
-  document.getElementById('stop').onclick = function() {
-    // clearInterval(timer)
-    clearTimeout(timer)
-  }
-  let a = 10
-  ort()
-  function ort() {
-    document.getElementById('out').innerHTML = a;
-    a--;
-    if (a < 0) {
-      clearTimeout(timer)
-    } else {
-      timer = setTimeout(ort, 1000)
-    }
-  }
-  // setTimeout(move, 5000)
+    window.onresize = equalHeight
 }
