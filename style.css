@@ -3,15 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-.left, .right {
-  float: left;
-  padding: 20px;
-  width: 20%;
-}
-.left {
-  background-color: coral;
+.text-center {
+  text-align: center;
 }
 
-.right {
-  background-color: orange;
+.conteiner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map {
+  padding: 40px 0;
+  background-color: #f6f6f6;
 }
